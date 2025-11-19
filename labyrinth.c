@@ -7,7 +7,7 @@ task main()
 	motor[port3] = 127;
 	wait1Msec(2500);
 	motor[port3] = -127;
-  wait1Msec(630);
+	wait1Msec(630);
 	motor[port3] = 127;
 	wait1Msec(2900);
 	motor[port2] = -127;
