@@ -5,10 +5,24 @@
 
 task main()
 {
-	bool driving = false;
+	bool arm_on = false;
 	while (true) {
 		getJoystickSettings(joystick);
-    motor[port2] = joystick.joy1_y2;
-    motor[port3] = joystick.joy1_y1;
+		motor[port2] = joystick.joy1_y2;
+		motor[port3] = joystick.joy1_y1;
+		if (joy1Btn(Btn5) == 1) {
+    		if (!arm_on) {
+    			motor[armMotor] = 127;
+    			arm_on = true;
+    		}
+    	} else if (joy1Btn(Btn6) == 1) {
+    		if (!arm_on) {
+    			motor[armMotor] = -127;
+    			arm_on = true;
+    		}
+    	} else {
+    		motor[armMotor] = 0;
+    		arm_on = false;
+  		}
 	}
 }
