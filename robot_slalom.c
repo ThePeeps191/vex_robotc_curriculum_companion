@@ -7,7 +7,9 @@ task main()
 {
 	while (true) {
 		getJoystickSettings(joystick);
-		motor[port2] = joystick.joy1_y2;
-		motor[port3] = joystick.joy1_y1;
+		int y2 = joystick.joy1_y2, y1 = joystick.joy1_y1;
+		bool b2 = y2 >= 0, b1 = y1 >= 0;
+		motor[port2] = (b2 == b1 ? y2 : y2 / 2);
+		motor[port3] = (b2 == b1 ? y1 : y1 / 2);
 	}
 }
