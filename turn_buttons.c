@@ -26,6 +26,15 @@ task main()
 			wait1Msec(625);
 			motor[port2] = 0;
 			motor[port3] = 0;
+		} else if (joy1Btn(Btn5) == 1) {
+			motor[port2] = 60;
+			motor[port3] = -60;
+		} else if (joy1Btn(Btn6) == 1) {
+			motor[port2] = -60;
+			motor[port3] = 60;
+		} else {
+			motor[port2] = 0;
+			motor[port3] = 0;
 		}
 	}
 }
