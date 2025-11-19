@@ -8,7 +8,7 @@ task main()
 	bool driving = false;
 	while (true) {
 		getJoystickSettings(joystick);
-    motor[port2] = joystick.joy1_y2;
-    motor[port3] = joystick.joy1_y1;
+		motor[port2] = joystick.joy1_y2;
+		motor[port3] = joystick.joy1_y1;
 	}
 }
