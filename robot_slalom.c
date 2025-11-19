@@ -5,7 +5,6 @@
 
 task main()
 {
-	bool driving = false;
 	while (true) {
 		getJoystickSettings(joystick);
 		motor[port2] = joystick.joy1_y2;
