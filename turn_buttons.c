@@ -5,7 +5,6 @@
 
 task main()
 {
-	bool driving = false;
 	while (true) {
 		getJoystickSettings(joystick);
 		int x = joystick.joy1_TopHat;
